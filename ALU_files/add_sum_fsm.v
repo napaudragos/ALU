@@ -33,7 +33,7 @@ module add_sub_fsm (
                 // WAIT_FOR_START_FALL
                 4'd10: begin
                     if (!start) begin
-                        c0 = 1;            // încarc? M <= in1
+                        c0 = 1;            // Ã®ncarc? M <= in1
                         state_next = 4'd11;
                     end
                 end
