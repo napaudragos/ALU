@@ -18,4 +18,5 @@ vsim work.top_level_tb
 
 add wave *
 
+
 run -all

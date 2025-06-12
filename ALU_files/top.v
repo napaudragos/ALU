@@ -19,6 +19,7 @@ module alu_top (
     wire q0,qminus1;
     wire a7;
     
+    
     arithmetic_unit arith_unit (
         .clk(clk),
         .rst(rst),

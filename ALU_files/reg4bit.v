@@ -13,4 +13,5 @@ module reg4bit (
             q <= d;
     end
 
+
 endmodule

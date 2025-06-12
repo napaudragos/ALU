@@ -13,4 +13,5 @@ module reg1bit (
             out <= in;
     end
 
+
 endmodule

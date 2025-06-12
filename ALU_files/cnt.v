@@ -42,3 +42,4 @@ module counter3bit (
   assign out[1] = s3;
   assign out[2] = s5;
 endmodule
+

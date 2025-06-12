@@ -118,6 +118,7 @@ module control_unit (
 
 
 
+
     // === Multiplexare semnale de control ===
     assign c0  = (op_latched[1] == 0) ? c0_add_sub :
                  (op_latched == 2'b10) ? c0_mul :

@@ -143,3 +143,4 @@ module rca8bit (
   assign z[6] = s26;
   assign z[7] = s30;
 endmodule
+

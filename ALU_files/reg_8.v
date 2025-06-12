@@ -6,6 +6,7 @@ module reg_8 (
   input load,
   output [7:0] out
 );
+
   wire s0;
   wire s1;
   wire [7:0] s2;

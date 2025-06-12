@@ -13,4 +13,5 @@ module reg8bit (
             out <= in;
     end
 
+
 endmodule

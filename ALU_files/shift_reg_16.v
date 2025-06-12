@@ -19,6 +19,7 @@ module Mux_2x1_NBits #(
     end
 endmodule
 
+
 module Mux_4x1_NBits #(
     parameter Bits = 2
 )
