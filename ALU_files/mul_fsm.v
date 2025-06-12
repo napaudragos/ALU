@@ -35,7 +35,7 @@ module mul_fsm (
                 // WAIT_START_FALL
                 4'd10: begin
                     if (!start) begin
-                        c0 = 1;              // încarc? M
+                        c0 = 1;              // Ã®ncarc? M
                         state_next = 4'd1;
                     end
                 end
