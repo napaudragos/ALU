@@ -24,41 +24,41 @@ module div_fsm (
         end else begin
             case (state_curr)
 
-                // IDLE ? a?teapt? Ónceputul opera?iei
+                // IDLE ? a?teapt? √Ænceputul opera?iei
                 4'd0: begin
                     if (start)
-                        state_next = 4'd11;  // trece Ón WAIT_START_FALL
+                        state_next = 4'd11;  // trece √Æn WAIT_START_FALL
                 end
 
                 // WAIT_START_FALL ? a?teapt? c?derea lui start
                 4'd11: begin
                     if (!start) begin
-                        c9 = 1;              // Óncarc? A (partea superioar? a Ómp?r?itului)
+                        c9 = 1;              // √Æncarc? A (partea superioar? a √Æmp?r?itului)
                         state_next = 4'd1;
                     end
                 end
 
-                // LOAD Q (partea inferioar? a Ómp?r?itului)
+                // LOAD Q (partea inferioar? a √Æmp?r?itului)
                 4'd1: begin
-                    c1 = 1;                 // Óncarc? Q
+                    c1 = 1;                 // √Æncarc? Q
                     state_next = 4'd2;
                 end
 
-                // LOAD B (Ómp?r?itorul)
+                // LOAD B (√Æmp?r?itorul)
                 4'd2: begin
-                    c0 = 1;                 // Óncarc? M
+                    c0 = 1;                 // √Æncarc? M
                     state_next = 4'd3;
                 end
 
                 // SHL AQ
                 4'd3: begin
-                    c4 = 1;                 // shift st‚nga A:Q
+                    c4 = 1;                 // shift st√¢nga A:Q
                     state_next = 4'd4;
                 end
 
                 // A = A - M
                 4'd4: begin
-                    c2 = 1;                 // Óncarc? A cu rezultatul
+                    c2 = 1;                 // √Æncarc? A cu rezultatul
                     c3 = 1;                 // sc?dere
                     state_next = 4'd5;
                 end
