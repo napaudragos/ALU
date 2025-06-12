@@ -3,16 +3,16 @@ module arithmetic_unit (
     input rst,
     input [7:0] inbus,
     input [1:0] op, // 00 = add, 01 = sub, 10 = mul, 11 = div
-    input c0,  // Óncarc? operandul Ón registrul M
-    input c1,  // Óncarc? operandul Ón registrul Q
-    input c2,  // Óncarc? rezultatul adderului Ón A
-    input c3,  // semnal care selecteaz? Óntre adunare (0) ?i sc?dere (1)
+    input c0,  // √Æncarc? operandul √Æn registrul M
+    input c1,  // √Æncarc? operandul √Æn registrul Q
+    input c2,  // √Æncarc? rezultatul adderului √Æn A
+    input c3,  // semnal care selecteaz? √Æntre adunare (0) ?i sc?dere (1)
     input c4,  // activeaz? opera?ia de shift
     input c5,  // incrementeaz? contorul
     input c6,  // bit de intrare pentru shift
-    input c7,  // Óncarca partea superioara din AQ Ón outbus
-    input c8,  // Óncarca partea inferioara din AQ Ón outbus
-    input c9,  // Óncarca direct operandul Ón A
+    input c7,  // √Æncarca partea superioara din AQ √Æn outbus
+    input c8,  // √Æncarca partea inferioara din AQ √Æn outbus
+    input c9,  // √Æncarca direct operandul √Æn A
     input c10, // forteaza Q[0] si ia valoarea din c6
     input internal_rst,
 
@@ -32,7 +32,7 @@ module arithmetic_unit (
     wire [2:0] cnt_out;
     wire aq_bit_out;
     assign AQM_debug = {aq_out, m_out};
-    // cnt_ok este activat c‚nd toti cei 3 biti ai contorului sunt 1
+    // cnt_ok este activat c√¢nd toti cei 3 biti ai contorului sunt 1
     assign cnt_ok = &cnt_out;
 
     // q0 este bitul cel mai putin semnificativ din registrul Q
@@ -41,16 +41,16 @@ module arithmetic_unit (
     // a7 este bitul cel mai semnificativ din registrul A
     assign a7 = aq_out[15];
 
-    // selecteaz? A sau Q ca intrare Ón adder, Ón func?ie de operatie (op[1])
+    // selecteaz? A sau Q ca intrare √Æn adder, √Æn func?ie de operatie (op[1])
     assign add_in1 = op[1] ? aq_out[15:8] : aq_out[7:0];
 
-    // al doilea operand al adderului este Óntotdeauna M
+    // al doilea operand al adderului este √Æntotdeauna M
     assign add_in2 = m_out;
 
-    // dac? c2 este activ, Óncarcam rezultatul din adder Ón A; altfel, Óncarcam inbus
+    // dac? c2 este activ, √Æncarcam rezultatul din adder √Æn A; altfel, √Æncarcam inbus
     assign aq_in = c2 ? {8'b0, add_temp_result[7:0]} : {inbus, 8'b0};
 
-    // selectam iesirea (A sau Q) Ón functie de c7/c8
+    // selectam iesirea (A sau Q) √Æn functie de c7/c8
     assign outbus = aq_out;
     wire [1:0] load_sel;
     assign load_sel = {(c2 | c9), c1}; // A ?i Q
