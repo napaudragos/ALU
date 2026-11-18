@@ -1,6 +1,6 @@
 # 🔢 ALU pe 8 biți (Verilog)
 
-Unitate aritmetică pe 8 biți, scrisă în **Verilog**, care face **adunare, scădere, înmulțire și împărțire**. Proiect în echipă cu Ghimboașă Casian, Radu Bogdan, Efleih-Hassan Raian și Giurea Vlad.
+Unitate aritmetică pe 8 biți, scrisă în **Verilog**, care face **adunare, scădere, înmulțire și împărțire**. Proiect în echipă.
 
 ## Arhitectură
 ALU-ul are două module principale, legate în `top.v`:
